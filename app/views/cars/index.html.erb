@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1 class="text-center">💎 Gran Cars 💎</h1>
+      <% @cars.each do |car| %>
+        <div class="card">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <%= link_to car_path(car), class: "card-img-top" do %>
+                <img src="<%= car.photo %>" class="card-img-top" alt="">
+              <% end %>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title"><%= car.name %></h5>
+                <p class="card-text"><%= car.address %></p>
+                <p class="card-text">Price for a day: <%= car.price %> €</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
