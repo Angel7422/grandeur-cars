@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   end
   get 'my_cars', to: 'cars#my_cars'
+  get 'dashboard', to: 'pages#dashboard'
   # Defines the root path route ("/")
   # root "posts#index"
 end
