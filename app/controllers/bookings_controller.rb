@@ -22,7 +22,7 @@ class BookingsController < ApplicationController
     # multiplier le resultat par @car.price
     @booking.booking_price = num_days * @car.price
     if @booking.save
-      redirect_to bookings_path, status: :see_other
+      redirect_to bookings_path, notice: 'Booking was successfully created.', status: :see_other
     else
       render :new, status: :unprocessable_entity
     end
