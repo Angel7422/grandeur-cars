@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
-  # TODO before_action: set_booking
+  before_action :authenticate_user!
+  before_action :set_booking, only: [:validate, :reject]
 
   def index
     @bookings = Booking.where(user_id: current_user.id)
