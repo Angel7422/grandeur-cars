@@ -1,1 +1,14 @@
 // Specific CSS for your home-page
+.banner{
+  padding: 150px 0;
+  color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+}
+
+.banner .container h1{
+  margin: 0;
+}
