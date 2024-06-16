@@ -1,0 +1,20 @@
+.footer {
+  background-color: #f8f9fa;
+  padding: 10px 0;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
+  p {
+    margin: 0; // Supprime les marges par défaut du paragraphe
+  }
+
+  .smaller-text {
+    font-size: 80%;
+  }
+
+  .fa-heart {
+    color: red; // Couleur rouge pour l'icône
+  }
+}
