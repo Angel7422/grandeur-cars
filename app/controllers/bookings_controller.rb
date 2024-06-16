@@ -3,7 +3,8 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: [:validate, :reject]
 
   def index
-    @bookings = Booking.where(user_id: current_user.id)
+    @car = Car.find(params[:car_id])
+    @bookings = @car.bookings.where(user_id: current_user.id)
   end
 
   def new
