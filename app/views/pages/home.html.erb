@@ -1,26 +1,24 @@
-<div class="banner" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-UcUC1vD1mJ1tf3DYs9EVliOprLWEoEzTww&s">
-
-          <div class="mx-5">
-            <h1>💎 Gran Cars 💎</h1>
-            <p>The Luxury is here for you</p>
-          </div>
-        </div>
+<div class="banner" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-UcUC1vD1mJ1tf3DYs9EVliOprLWEoEzTww&s')">
+  <div class="mx-5">
+    <h1>💎 Gran Cars 💎</h1>
+    <p>The Luxury is here for you</p>
+  </div>
+</div>
 
 <div class="container px-4 py-5 text-center">
   <div class="row g-5">
     <div class="col">
+      <% if user_signed_in? %>
+        <p class="text-success">Welcome <%= current_user.email %> !!!</p>
+      <% else %>
+        <h3>You are not logged in!</h3>
+        <p class="border border-end-0 border-start-0 border-dark-subtle mt-5 border-3">Elevate your driving experience! Luxury on four wheels!</p>
+      <% end %>
 
-    <% if user_signed_in? %>
-      <p class="text-success">Welcome <%= current_user.email %> !!!</p>
-    <% else %>
-      <h3>You are not logged in!</h3>
-      <p class="border border-end-0 border-start-0 border-dark-subtle mt-5 border-3">Elevate your driving experience! Luxury on four wheels!</p>
-    <% end %>
-
-    <div class="buttons">
-      <%= link_to "Cars", cars_path, class: "btn btn-secondary" %>
-      <%= link_to "Bookings", car_bookings_path(@car), class: "btn btn-secondary" %>
-    </div>
+      <div class="buttons">
+        <%= link_to "Cars", cars_path, class: "btn btn-secondary" %>
+        <%#= link_to "Bookings", bookings_path, class: "btn btn-secondary" if user_signed_in? %>
+      </div>
     </div>
   </div>
 </div>
