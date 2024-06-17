@@ -24,13 +24,9 @@ class BookingsController < ApplicationController
     @booking.status = "pending"
     # recuperer le start date et end date
     # calculer le nombre de jours de difference entre les 2
-    start_date = Date.new(params["booking"]["start_date(1i)"].to_i,
-                        params["booking"]["start_date(2i)"].to_i,
-                        params["booking"]["start_date(3i)"].to_i)
 
-    end_date = Date.new(params["booking"]["end_date(1i)"].to_i,
-                      params["booking"]["end_date(2i)"].to_i,
-                      params["booking"]["end_date(3i)"].to_i)
+    start_date = Date.parse(params["booking"]["start_date"])
+    end_date = Date.parse(params["booking"]["end_date"])
 
     @booking.start_date = start_date
     @booking.end_date = end_date
