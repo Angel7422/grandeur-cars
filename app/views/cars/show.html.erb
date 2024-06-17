@@ -1,4 +1,21 @@
-<h1><%= @car.name %></h1>
-<p>Price per day: <%= number_to_currency(@car.price) %></p>
+<title>Gran Cars - <%= @car.name %></title>
 
-<%= link_to "Book this Car", new_car_booking_path(car_id: @car.id) %>
+<main class="container">
+  <div class="car-details">
+    <h1><%= @car.name %></h1>
+
+    <div class="car-info">
+      <p><strong>Address:</strong> <%= @car.address %></p>
+      <p><strong>Price per day:</strong> <%= number_to_currency(@car.price) %></p>
+    </div>
+
+    <div class="car-actions">
+      <%= link_to "Book this Car", new_car_booking_path(car_id: @car.id), class: 'btn btn-primary' %>
+      <%= link_to 'Back to Cars', cars_path, class: 'btn btn-secondary' %>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2024 Gran Cars</p>
+</footer>
