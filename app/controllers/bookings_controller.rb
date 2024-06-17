@@ -19,11 +19,21 @@ class BookingsController < ApplicationController
     @booking.status = "pending"
     # recuperer le start date et end date
     # calculer le nombre de jours de difference entre les 2
+    start_date = Date.new(params["booking"]["start_date(1i)"].to_i,
+                        params["booking"]["start_date(2i)"].to_i,
+                        params["booking"]["start_date(3i)"].to_i)
+
+    end_date = Date.new(params["booking"]["end_date(1i)"].to_i,
+                      params["booking"]["end_date(2i)"].to_i,
+                      params["booking"]["end_date(3i)"].to_i)
+
+    @booking.start_date = start_date
+    @booking.end_date = end_date
     num_days = (end_date - start_date).to_i
     # multiplier le resultat par @car.price
     @booking.booking_price = num_days * @car.price
     if @booking.save
-      redirect_to bookings_path, notice: 'Booking was successfully created.', status: :see_other
+      redirect_to car_bookings_path(@car), notice: 'Booking was successfully created.', status: :see_other
     else
       render :new, status: :unprocessable_entity
     end
