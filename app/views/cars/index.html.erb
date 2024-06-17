@@ -12,8 +12,8 @@
             </div>
             <div class="col-md-8">
               <div class="card-body">
-                <h5 class="card-title"><%= car.name %></h5>
-                <p class="card-text"><%= car.address %></p>
+                <h3 class="card-title"><%= car.name %></h3>
+                <p class="card-text">Location : <%= car.address %></p>
                 <p class="card-text">Price for a day: <%= car.price %> €</p>
                 <%= link_to "View Details", car_path(car), class: "btn btn-primary" %>
               </div>
