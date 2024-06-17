@@ -1,8 +1,17 @@
 class BookingsController < ApplicationController
-  # TODO before_action: set_booking
+  before_action :authenticate_user!
+  before_action :set_booking, only: [:validate, :reject]
 
   def index
-    @bookings = Booking.where(user_id: current_user.id)
+    #
+    # inserer un lien a partir de la show de la voiture pour pouvoir accèder a l'index de bookings
+    # recupèrer le parametre et je fais un if pour recupèrer le booking de la voiture en question ou pas
+    if params[:car_id].present?
+      @car = Car.find(params[:car_id])
+      @bookings = Booking.where(car_id: @car.id, user_id: current_user.id)
+    else
+      @bookings = Booking.where(user_id: current_user.id)
+    end
   end
 
   def new
@@ -18,11 +27,21 @@ class BookingsController < ApplicationController
     @booking.status = "pending"
     # recuperer le start date et end date
     # calculer le nombre de jours de difference entre les 2
+    start_date = Date.new(params["booking"]["start_date(1i)"].to_i,
+                        params["booking"]["start_date(2i)"].to_i,
+                        params["booking"]["start_date(3i)"].to_i)
+
+    end_date = Date.new(params["booking"]["end_date(1i)"].to_i,
+                      params["booking"]["end_date(2i)"].to_i,
+                      params["booking"]["end_date(3i)"].to_i)
+
+    @booking.start_date = start_date
+    @booking.end_date = end_date
     num_days = (end_date - start_date).to_i
     # multiplier le resultat par @car.price
     @booking.booking_price = num_days * @car.price
     if @booking.save
-      redirect_to bookings_path, notice: 'Booking was successfully created.', status: :see_other
+      redirect_to car_bookings_path(@car), notice: 'Booking was successfully created.', status: :see_other
     else
       render :new, status: :unprocessable_entity
     end

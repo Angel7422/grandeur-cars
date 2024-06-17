@@ -1,10 +1,11 @@
-<%= simple_form_for @booking do |f| %>
+<%= simple_form_for [@car, @booking] do |f| %>
   <div class="form-inputs">
     <%= f.input :start_date, label: "Start date" %>
     <%= f.input :end_date, label: "End date" %>
+    <%= f.input :status, label: "Status" %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, class: "btn btn-primary" %>
+    <%= f.button :submit, "Create Booking", class: "btn btn-primary" %>
   </div>
   <% end %>

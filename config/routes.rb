@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   resources :cars do
     resources :bookings
   end
+  resources :bookings, only: [:index]
   get 'my_cars', to: 'cars#my_cars'
+  get 'dashboard', to: 'pages#dashboard'
   # Defines the root path route ("/")
   # root "posts#index"
 end
