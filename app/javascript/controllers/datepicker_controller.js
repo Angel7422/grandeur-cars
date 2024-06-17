@@ -3,7 +3,9 @@ import flatpickr from "flatpickr";
 // Connects to data-controller="datepicker"
 export default class extends Controller {
   connect() {
-    console.log("Hello from toggle_controller.js")
-    flatpickr(this.element)
+    flatpickr(this.element, {
+      minDate: Date.now(),
+      // ajouter un disable pour la date
+    })
   }
 }
