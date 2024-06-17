@@ -1,0 +1,32 @@
+.card_car_detail {
+  background-color: #f9f9f9;
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.card_car_detail h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.card_car_detail p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.card_car_detail img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.card_car_detail .car_price {
+  font-size: 24px;
+  font-weight: 600;
+  color: #ff0000;
+  margin-bottom: 10px;
+}

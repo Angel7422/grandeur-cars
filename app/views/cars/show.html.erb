@@ -1,25 +1,19 @@
-<title>Gran Cars - <%= @car.name %></title>
-
-<main class="container">
-  <div class="row">
-    <div class="col-md-4">
-      <%= image_tag @car.photo, class: "img-fluid rounded" %>
-    </div>
-    <div class="col-md-8">
-      <div class="car-details">
-        <h1><%= @car.name %></h1>
-
-        <div class="car-info">
-          <p><strong>Address:</strong> <%= @car.address %></p>
-          <p><strong>Price per day:</strong> <%= number_to_currency(@car.price) %></p>
-        </div>
-
-        <div class="car-actions">
-          <%= link_to "Book this Car", new_car_booking_path(car_id: @car.id), class: 'btn btn-primary' %>
-          <%= link_to 'Back to Cars', cars_path, class: 'btn btn-secondary' %>
-          <%= link_to 'All reservations', car_booking_path(@car) %>
-        </div>
-      </div>
-    </div>
+<div class="card-car-details">
+  <div class="text-center">
+    <%= image_tag @car.picture.url, class: "img-fluid rounded center-image" %>
   </div>
-</main>
+  <div class="card-car-info text-center">
+    <div>
+      <h1><%= @car.name %></h1>
+      <br> <!-- Add a line break here -->
+      <h4><strong>Location : </strong><%= @car.address %></h4>
+    </div>
+    <br> <!-- Add a line break here -->
+    <h2 class="card-car-pricing"> Price per day : <%= number_to_currency(@car.price) %></h2>
+    <br> <!-- Add a line break here -->
+    <%= link_to "Book this Car", new_car_booking_path(car_id: @car.id), class: "btn btn-primary" %>
+    <%= link_to 'Back to Cars', cars_path, class: 'btn btn-secondary' %>
+    <br> <!-- Add a line break here -->
+    <%= link_to 'All reservations', car_booking_path(@car) %>
+  </div>
+</div>
