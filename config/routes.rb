@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
   resources :bookings, only: [:index]
   resources :cars do
-    resources :bookings
+    resources :bookings, except: [:index]
   end
   resources :bookings, only: [:index]
   get 'my_cars', to: 'cars#my_cars'

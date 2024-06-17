@@ -3,9 +3,6 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: [:validate, :reject]
 
   def index
-    #
-    # inserer un lien a partir de la show de la voiture pour pouvoir accèder a l'index de bookings
-    # recupèrer le parametre et je fais un if pour recupèrer le booking de la voiture en question ou pas
     if params[:car_id].present?
       @car = Car.find(params[:car_id])
       @bookings = Booking.where(car_id: @car.id, user_id: current_user.id)
@@ -41,7 +38,7 @@ class BookingsController < ApplicationController
     # multiplier le resultat par @car.price
     @booking.booking_price = num_days * @car.price
     if @booking.save
-      redirect_to car_bookings_path(@car), notice: 'Booking was successfully created.', status: :see_other
+      redirect_to bookings_path, notice: 'Booking was successfully created.', status: :see_other
     else
       render :new, status: :unprocessable_entity
     end
