@@ -17,6 +17,7 @@
         <div class="car-actions">
           <%= link_to "Book this Car", new_car_booking_path(car_id: @car.id), class: 'btn btn-primary' %>
           <%= link_to 'Back to Cars', cars_path, class: 'btn btn-secondary' %>
+          <%= link_to 'All reservations', car_booking_path(@car) %>
         </div>
       </div>
     </div>
