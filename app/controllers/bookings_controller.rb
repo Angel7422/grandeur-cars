@@ -30,8 +30,8 @@ class BookingsController < ApplicationController
 
     @booking.start_date = start_date
     @booking.end_date = end_date
+
     num_days = (end_date - start_date).to_i
-    # multiplier le resultat par @car.price
     @booking.booking_price = num_days * @car.price
     if @booking.save
       redirect_to bookings_path, notice: 'Booking was successfully created.', status: :see_other
