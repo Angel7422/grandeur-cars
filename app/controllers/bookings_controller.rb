@@ -3,8 +3,15 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: [:validate, :reject]
 
   def index
-    @car = Car.find(params[:car_id])
-    @bookings = @car.bookings.where(user_id: current_user.id)
+    #
+    # inserer un lien a partir de la show de la voiture pour pouvoir accèder a l'index de bookings
+    # recupèrer le parametre et je fais un if pour recupèrer le booking de la voiture en question ou pas
+    if params[:car_id].present?
+      @car = Car.find(params[:car_id])
+      @bookings = Booking.where(car_id: @car.id, user_id: current_user.id)
+    else
+      @bookings = Booking.where(user_id: current_user.id)
+    end
   end
 
   def new

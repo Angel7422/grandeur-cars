@@ -14,10 +14,9 @@
         <h3>You are not logged in!</h3>
         <p class="border border-end-0 border-start-0 border-dark-subtle mt-5 border-3">Elevate your driving experience! Luxury on four wheels!</p>
       <% end %>
-
       <div class="buttons">
         <%= link_to "Cars", cars_path, class: "btn btn-secondary" %>
-        <%= link_to "Bookings", bookings_path, class: "btn btn-secondary" if user_signed_in? %>
+        <%= link_to "Bookings", bookings_path(@bookings), class: "btn btn-secondary" if user_signed_in? %>
       </div>
     </div>
   </div>

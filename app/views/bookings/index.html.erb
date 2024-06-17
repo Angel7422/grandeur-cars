@@ -20,13 +20,13 @@
         <td><%= booking.end_date %></td>
         <td><%= booking.status %></td>
         <td>
-          <%= link_to 'Show', car_booking_path(@car, booking), class: 'btn btn-primary btn-sm' %>
-          <%= link_to 'Edit', edit_car_booking_path(@car, booking), class: 'btn btn-secondary btn-sm' %>
-          <%= link_to 'Cancel', car_booking_path(@car, booking), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+          <%= link_to 'Show', car_path(booking.car), class: 'btn btn-primary btn-sm' %>
+          <%#= link_to 'Edit', edit_car_booking_path(@car, booking), class: 'btn btn-secondary btn-sm' %>
+          <%#= link_to 'Cancel', car_booking_path(@car, booking), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to 'New Booking', new_car_booking_path(@car), class: 'btn btn-success' %>
+<%#= link_to 'New Booking', new_car_booking_path(@car), class: 'btn btn-success' %>
