@@ -1,11 +1,12 @@
-<div class="banner" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-UcUC1vD1mJ1tf3DYs9EVliOprLWEoEzTww&s')">
+<body class="background-page">
+<div class="banner common-bg" style="background-image: url('https://res.cloudinary.com/dfwstcrkv/image/upload/v1718711706/grandgarage_vid5mb.jpg')">
   <div class="mx-5">
     <h1>💎 Gran Cars 💎</h1>
     <p>The Luxury is here for you</p>
   </div>
 </div>
 
-<div class="container px-4 py-5 text-center">
+<div id="car-log" class="container px-4 py-5 text-center common-bg">
   <div class="row g-5">
     <div class="col">
       <% if user_signed_in? %>
@@ -15,9 +16,25 @@
         <p class="border border-end-0 border-start-0 border-dark-subtle mt-5 border-3">Elevate your driving experience! Luxury on four wheels!</p>
       <% end %>
       <div class="buttons">
-        <%= link_to "Cars", cars_path, class: "btn btn-secondary" %>
+        <%= link_to "Login", cars_path, class: "btn btn-secondary" if !user_signed_in? %>
+        <%= link_to "Cars", cars_path, class: "btn btn-secondary" if user_signed_in? %>
         <%= link_to "Bookings", bookings_path(@bookings), class: "btn btn-secondary" if user_signed_in? %>
       </div>
     </div>
   </div>
 </div>
+
+<div id="carousel-gran-car" class="carousel slide common-bg" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://res.cloudinary.com/dfwstcrkv/image/upload/v1718373447/porsche_gt4rs_lb7mfn.jpg" class="d-block w-100" alt="Gt-4RS">
+    </div>
+    <div class="carousel-item">
+      <img src="https://res.cloudinary.com/dfwstcrkv/image/upload/v1718373446/pagani_huayra_2_zpoqnv.jpg" class="d-block w-100" alt="huayra">
+    </div>
+    <div class="carousel-item">
+      <img src="https://res.cloudinary.com/dfwstcrkv/image/upload/v1718373446/inibal_icon_dgdigc.jpg" class="d-block w-100" alt="inibal">
+    </div>
+  </div>
+</div>
+</body>

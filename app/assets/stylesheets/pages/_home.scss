@@ -7,8 +7,58 @@
   background-position: center;
   display: flex;
   justify-content: center;
+
+  h1 {
+    font-size: 50px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+  }
+
+  p{
+    font-size: 20px;
+    color: rgb(210, 209, 209);
+    text-shadow: #1f242d 2px 1px 0px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    text-align: center;
+  }
 }
 
 .banner .container h1{
+  font-size: 50px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   margin: 0;
+}
+
+#car-log {
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+  background-color: #1f242d;
+
+  .buttons {
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  h3 {
+    color: white;
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+  }
+
+  p{
+    color: white;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+
+  }
+}
+
+.background-page {
+  background-color: #1f242d;
 }
