@@ -13,7 +13,6 @@ car_1 = Car.new(
 file = URI.open('https://res.cloudinary.com/dfwstcrkv/image/upload/v1718373447/Veneno_wfrlw0.jpg')
 car_1.picture.attach(io: file, filename: 'car', content_type: 'image/png')
 car_1.save
-
 car_2 = Car.new(
   name: "Porsche GT-4RS",
   address: "Marseille",
