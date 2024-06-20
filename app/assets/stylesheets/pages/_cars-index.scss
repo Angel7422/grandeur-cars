@@ -1,0 +1,65 @@
+.container-index-cars {
+  padding: 20px;
+  background-color: #1F242D;
+}
+
+.card {
+  position: relative;
+  margin-bottom: 20x;
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.card-body {
+  position: absolute; // Permet de bloquer le contenu a l'intérieur de card
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 20px;
+  color: #fff;
+  transform: translateY(100%); // ça permet de cacher le body au début
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.card:hover .card-body {
+  transform: translateY(0); /* Affiche le contenu au survol */
+}
+
+.card:hover img {
+  transform: scale(1.1); /* Zoom légèrement l'image au survol */
+}
+
+.card-title{
+  font-size: 1.5em;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.index-text {
+  color: #7f8c8d;
+  margin-bottom: 10px;
+  font-family: 'Georgia', serif;
+  text-shadow: none;
+}
+
+.title-cars {
+  color: #fff;
+}
+
+.col-md-4 {
+  flex: 0 0 calc(33.33% - 20px); /* Ajustez la largeur de chaque colonne en fonction du nombre de cartes par ligne */
+  margin-bottom: 20px; /* Espacement entre les cartes */
+}
