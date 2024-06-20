@@ -1,0 +1,26 @@
+body {
+  align-items: center;
+  min-height: 100vh;
+
+  .container-login{
+    background-color: #1f242d;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    width: 300px; /* Largeur du rectangle */
+    text-align: center;
+  }
+}
+
+
+.sign-up, .password {
+  font-size: 13px;
+  text-decoration: none;
+  color: rgb(93, 92, 92);
+  text-shadow:#1f242d  1px 1px 2px;
+}
+
+.sign-up:hover, .password:hover {
+  color: rgb(218, 211, 211);
+  font-size: 15px;
+}
