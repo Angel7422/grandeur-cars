@@ -1,6 +1,6 @@
 // Specific CSS for your home-page
 .banner{
-  padding: 40vh 0;
+  padding: 35vh 0;
   color: white;
   opacity: 0.8;
   background-repeat: no-repeat;
@@ -12,7 +12,6 @@
   h1 {
     font-size: 50px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    margin: 0;
     text-align: center;
   }
 
@@ -58,6 +57,7 @@
 .btn:hover {
   opacity: 0.8; /* Fully opaque on hover */
   background-color: #1f242d; /* Darken the background color on hover */
+  font-size: 18px;
 }
 
 #car-log {
