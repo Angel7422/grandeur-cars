@@ -1,13 +1,13 @@
 .navbar-lewagon {
   // position: fixed;
-  opacity: 0.5;
-  margin-bottom: 20px;
+  opacity: 1;
+  margin-bottom: 0px;
   justify-content: space-between;
   top: 0;
   width: 100%;
   z-index: 1000;
   background-color: #1f242d;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease; /* Transition pour la couleur de fond */
 }
 .navbar-lewagon:hover {
   opacity: 1;
@@ -15,7 +15,11 @@
 
 .nav-link {
   color: rgb(151, 145, 145);
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: color 0.3s ease; /* Transition pour la couleur de texte */
 }
+
 .nav-link:hover {
   color: rgb(218, 211, 211);
 }
