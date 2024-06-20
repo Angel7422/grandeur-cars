@@ -12,6 +12,16 @@ body {
   }
 }
 
+.banner-login {
+  padding: 20vh 0;
+  color: white;
+  opacity: 0.8;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+}
 
 .sign-up, .password {
   font-size: 13px;
