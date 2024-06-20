@@ -17,7 +17,7 @@
 }
 
 .card-car-details {
-  background-color: rgb(25, 22, 7);
+  background-color: #1f242d;
   border: 1px solid #e6e6e6;
   border-radius: 4px;
   padding: 20px;
@@ -42,8 +42,19 @@
   height: auto;
   margin-bottom: 10px;
   }
+
 }
 
 .card-car-details .card-car-pricing {
   color: azure;
 }
+
+.card-car-details .btn-back {
+    background-color: #1f242d;
+    border-color: #6c757d;
+    border-radius: 50%;
+    position: absolute;
+    left: 25px;
+    top: 120px;
+    width: 100px;
+  }
