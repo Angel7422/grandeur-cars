@@ -5,14 +5,14 @@
         <%= image_tag @car.picture.url, class: "img-fluid rounded center-image" %>
           <h1><%= @car.name %></h1>
           <br> <!-- Add a line break here -->
-          <h4><strong>Location : </strong><%= @car.address %></h4>
+          <h4><strong><i class="fa-regular fa-location-dot"></i> </strong><%= @car.address %></h4>
         <br> <!-- Add a line break here -->
-        <h2 class="card-car-pricing"> Price per day : <%= number_to_currency(@car.price) %></h2>
+        <h2 class="card-car-pricing"><%= @car.price %> € / day</h2>
         <br> <!-- Add a line break here -->
         <%= link_to "Book this Car", new_car_booking_path(car_id: @car.id), class: "btn btn-primary" %>
-        <%= link_to 'Back to Cars', cars_path, class: 'btn btn-secondary' %>
+        <span class="btn-back"><%= link_to 'Back to Cars', cars_path, class: 'btn btn-secondary' %></span>
         <br> <!-- Add a line break here -->
-        <%= link_to 'All reservations', car_booking_path(@car) %>
+        <%# <%= link_to 'All reservations', car_booking_path(@car) %>
       </div>
     </div>
   </div>
