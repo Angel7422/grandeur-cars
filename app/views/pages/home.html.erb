@@ -1,30 +1,31 @@
 <body class="background-page">
 <div class="banner common-bg" style="background-image: url('https://res.cloudinary.com/dfwstcrkv/image/upload/v1718711706/grandgarage_vid5mb.jpg')">
   <div class="mx-5">
-    <h1>💎 Gran Cars 💎</h1>
+    <h1> Gran Cars </h1>
     <p>The Luxury is here for you</p>
+     <div class="buttons">
+        <%#= link_to "Login", cars_path, class: "btn btn-secondary" if !user_signed_in? %>
+        <%= link_to "Cars", cars_path, class: "btn btn-secondary" if user_signed_in? %>
+        <%#= link_to "Bookings", bookings_path(@bookings), class: "btn btn-secondary" if user_signed_in? %>
+      </div>
   </div>
 </div>
 
 <div id="car-log" class="container px-4 py-5 text-center common-bg">
   <div class="row g-5">
     <div class="col">
-      <% if user_signed_in? %>
-        <p class="text-success">Welcome <%= current_user.email %> !!!</p>
-      <% else %>
-        <h3>You are not logged in!</h3>
-        <p class="border border-end-0 border-start-0 border-dark-subtle mt-5 border-3">Elevate your driving experience! Luxury on four wheels!</p>
-      <% end %>
-      <div class="buttons">
-        <%= link_to "Login", cars_path, class: "btn btn-secondary" if !user_signed_in? %>
-        <%= link_to "Cars", cars_path, class: "btn btn-secondary" if user_signed_in? %>
-        <%= link_to "Bookings", bookings_path(@bookings), class: "btn btn-secondary" if user_signed_in? %>
-      </div>
+      <%# if user_signed_in? %>
+<!--        <p class="text-success">Welcome <%#= current_user.email %> !!!</p>-->
+      <%# else %>
+<!--        <h3>You are not logged in!</h3>-->
+        <p class="border border-end-0 border-start-0 border-dark-subtle mt-1 border-3">Elevate your driving experience! Luxury on four wheels!</p>
+      <%# end %>
+
     </div>
   </div>
 </div>
 
-<div id="carousel-gran-car" class="carousel slide common-bg" data-bs-ride="carousel">
+<!--<div id="carousel-gran-car" class="carousel slide common-bg" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img src="https://res.cloudinary.com/dfwstcrkv/image/upload/v1718373447/porsche_gt4rs_lb7mfn.jpg" class="d-block w-100" alt="Gt-4RS">
@@ -36,5 +37,5 @@
       <img src="https://res.cloudinary.com/dfwstcrkv/image/upload/v1718373446/inibal_icon_dgdigc.jpg" class="d-block w-100" alt="inibal">
     </div>
   </div>
-</div>
+</div>-->
 </body>
