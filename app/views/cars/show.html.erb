@@ -4,15 +4,17 @@
       <div class="card-car-info text-center">
         <%= image_tag @car.picture.url, class: "img-fluid rounded center-image" %>
           <h1><%= @car.name %></h1>
-          <br> <!-- Add a line break here -->
-          <h4><strong><i class="fa-solid fa-map-pin"></i> </strong><%= @car.address %></h4>
-        <br> <!-- Add a line break here -->
-        <h2 class="card-car-pricing"><%= @car.price %> <i class="fa-solid fa-euro-sign"></i> /day</h2>
-        <br> <!-- Add a line break here -->
+          <br>
+          <h4 id="car-address" class="car-address"><strong><i class="fa-solid fa-map-pin"></i> </strong><%= @car.address %></h4>
+        <br>
+        <h2 class="card-car-pricing"><%= @car.price %> <i class="fa-solid fa-euro-sign"></i>€ /day</h2>
+        <br>
         <%= link_to "Book this Car", new_car_booking_path(car_id: @car.id), class: "btn btn-primary" %>
         <span class="btn-back"><%= link_to 'Back to Cars', cars_path, class: 'btn btn-secondary' %></span>
-        <br> <!-- Add a line break here -->
-        <%# <%= link_to 'All reservations', car_booking_path(@car) %>
+        <br>
+        <div id="car-map" class="car-map" >
+          <%= image_tag "https://api.mapbox.com/styles/v1/mapbox/streets-v12/static/#{@car.longitude},#{@car.latitude},10.08,0/300x200?access_token=#{ENV['MAPBOX_TOKEN']}" %>
+        </div>
       </div>
     </div>
   </div>

@@ -30,6 +30,8 @@ gem "cloudinary"
 
 gem "font-awesome-rails"
 
+gem "geocoder"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
