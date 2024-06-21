@@ -1,0 +1,41 @@
+body {
+  .container-booking {
+    align-items: center;
+    margin-left: 41%;
+    margin-bottom: 40px;
+    background-color: rgba(31, 36, 45, 0.9); /* Make the background slightly transparent */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+    width: 300px; /* Rectangle width */
+    text-align: center;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeInScale 2s ease-in-out forwards;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  }
+
+  .container-booking:hover {
+    transform: scale(1.05);
+    background-color: rgb(63, 69, 81); /* Full opacity on hover */
+  }
+
+  @keyframes fadeInScale {
+    0% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .picture-booking {
+    width: 75%;
+    height: 75%;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeInScale 2s ease-in-out forwards;
+  }
+}
