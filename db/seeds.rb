@@ -4,9 +4,15 @@ Car.destroy_all
 
 puts 'Creating cars...'
 
+user = User.create!(
+  email: "alpha@gmail.com",
+  password: "123456",
+)
+user.save
+
 car_1 = Car.new(
   name: "Lamborghini Veneno",
-  address: "40 Quai Jean-Charles Rey, Fontvieillie, Monaco",
+  address: "40 Quai Jean-Charles Rey, Monaco",
   price: 3200 ,
   photo: "",
   user_id: User.first.id
@@ -14,6 +20,7 @@ car_1 = Car.new(
 file = URI.open('https://res.cloudinary.com/dfwstcrkv/image/upload/v1718373447/Veneno_wfrlw0.jpg')
 car_1.picture.attach(io: file, filename: 'car', content_type: 'image/png')
 car_1.save
+
 car_2 = Car.new(
   name: "Porsche GT-4RS",
   address: "20 Avenue Ferdinand Flotte, Marseille",
@@ -35,7 +42,6 @@ car_3 = Car.new(
 file = URI.open('https://res.cloudinary.com/dfwstcrkv/image/upload/v1718373446/koenigsegg_agera_rs_molucu.png')
 car_3.picture.attach(io: file, filename: 'car', content_type: 'image/png')
 car_3.save
-
 
 car_4 = Car.new(
   name: "Maserati Gran Turismo S",
