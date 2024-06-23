@@ -1,5 +1,6 @@
 body {
   background-color: rgb(17, 16, 26);
+  background-image: url('https://res.cloudinary.com/dfwstcrkv/image/upload/v1718711706/grandgarage_vid5mb.jpg');
 }
 
 .container {
@@ -7,6 +8,8 @@ body {
   0 0 20px rgba(255, 255, 255, 0.7),
   0 0 30px rgba(255, 255, 255, 0.7),
   0 0 40px rgba(255, 255, 255, 0.7);
+  max-width: 500px;
+  max-height: 490px;
 }
 
 .btn {
