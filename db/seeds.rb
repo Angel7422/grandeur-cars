@@ -1,11 +1,18 @@
+require "json"
 
 Car.destroy_all
 
 puts 'Creating cars...'
 
+user = User.create!(
+  email: "alpha@gmail.com",
+  password: "123456",
+)
+user.save
+
 car_1 = Car.new(
   name: "Lamborghini Veneno",
-  address: "Monaco",
+  address: "40 Quai Jean-Charles Rey, Monaco",
   price: 3200 ,
   photo: "",
   user_id: User.first.id
@@ -13,9 +20,10 @@ car_1 = Car.new(
 file = URI.open('https://res.cloudinary.com/dfwstcrkv/image/upload/v1718373447/Veneno_wfrlw0.jpg')
 car_1.picture.attach(io: file, filename: 'car', content_type: 'image/png')
 car_1.save
+
 car_2 = Car.new(
   name: "Porsche GT-4RS",
-  address: "Marseille",
+  address: "20 Avenue Ferdinand Flotte, Marseille",
   price: 2800 ,
   photo: "",
   user_id: User.first.id
@@ -26,7 +34,7 @@ car_2.save
 
 car_3 = Car.new(
   name: "Koenigsegg Agera-RS",
-  address: "Paris",
+  address: "16 Villa Gaudelet, Paris",
   price: 3700 ,
   photo: "",
   user_id: User.first.id
@@ -35,10 +43,9 @@ file = URI.open('https://res.cloudinary.com/dfwstcrkv/image/upload/v1718373446/k
 car_3.picture.attach(io: file, filename: 'car', content_type: 'image/png')
 car_3.save
 
-
 car_4 = Car.new(
   name: "Maserati Gran Turismo S",
-  address: "Nice",
+  address: "6–14 Rue Halévy, Nice",
   price: 3100 ,
   photo: "",
   user_id: User.first.id
@@ -49,7 +56,7 @@ car_4.save
 
 car_5 = Car.new(
   name: "Lamborghini Avantador",
-  address: "Cannes",
+  address: "22 Rue Hoche,Cannes",
   price: 3400 ,
   photo: "",
   user_id: User.first.id
@@ -60,7 +67,7 @@ car_5.save
 
 car_6 = Car.new(
   name: "Pagani Huayra",
-  address: "Lyon",
+  address: "53 Rue d'Anvers, Lyon",
   price: 3500 ,
   photo: "",
   user_id: User.first.id
@@ -71,7 +78,7 @@ car_6.save
 
 car_7 = Car.new(
   name: "Rolls-Royce Phantom",
-  address: "Geneve",
+  address: " 78 Avenue de la Roseraie, Geneve",
   price: 3800 ,
   photo: "",
   user_id: User.first.id
@@ -82,7 +89,7 @@ car_7.save
 
 car_8 = Car.new(
   name: "Anibal Icon",
-  address: "Marseille",
+  address: "24 Rue Glandeves, Marseille",
   price: 3800 ,
   photo: "",
   user_id: User.first.id
@@ -93,7 +100,7 @@ car_8.save
 
 car_9 = Car.new(
   name: "Bugatti Chiron",
-  address: "Monaco",
+  address: "2 Impasse des Carrières, Les Moneghetti, Monaco",
   price: 4200 ,
   photo: "",
   user_id: User.first.id
@@ -104,7 +111,7 @@ car_9.save
 
 car_10 = Car.new(
   name: "Ferrari Sp-48",
-  address: "Lyon",
+  address: "221 Avenue Jean Jaurès, Lyon",
   price: 3100 ,
   photo: "",
   user_id: User.first.id
