@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <button data-action="booking#toggle">Book This Car</button>
 
 <div data-controller="booking">
@@ -6,6 +7,33 @@
       <div>
         <%= form.label :start_date, "Start Date:" %>
         <%= form.date_field :start_date, required: true %>
+=======
+<div class="card-container">
+  <div class="row">
+    <div class="card-car-details">
+      <div class="card-car-info text-center">
+        <%= image_tag @car.picture.url, class: "img-fluid rounded center-image" %>
+          <h1><%= @car.name %></h1>
+          <br>
+          <h4 id="car-address" class="car-address">
+            <strong><i class="far fa-map-marker"></i> </strong><%= @car.address %>
+            </h4>
+        <br>
+        <h2 class="card-car-pricing"><%= @car.price %> <i class="fa-solid fa-euro-sign"></i>€ /day</h2>
+        <br>
+        <%= link_to "Book this Car", new_car_booking_path(car_id: @car.id), class: "btn btn-primary" %>
+        <%= link_to 'Back to Cars', cars_path, class: 'btn btn-secondary ms-3' %>
+        <br>
+        <br>
+          <div id="car-map"
+              data-controller="map"
+              data-map-api-key-value="<%= ENV['MAPBOX_TOKEN'] %>"
+              data-map-markers-value="<%= [{ lat: @car.latitude, lng: @car.longitude }].to_json %>"
+              style="width: 550px; height: 300px; margin: 0 auto;"
+              class="car-map">
+          </div>
+        </div>
+>>>>>>> 58d8478fd18b547972dcaba66dac6bdec415f078
       </div>
 
       <div>
