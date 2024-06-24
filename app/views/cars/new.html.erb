@@ -1,8 +1,8 @@
-<h1 class="text-center text-light m-5">New Car</h1>
+<h1 class="text-center text-light mb-1 mt-1">New Car</h1>
 
-<div class="container bg-dark text-light py-3 mb-5">
-  <div class="row g-3 p-3 m-2 justify-content-center">
-    <div class="col">
+<div class="container bg-dark text-light py-3 mb-5 opacity-75">
+  <div class="row g-3 justify-content-center">
+    <div class="col-md-8">
         <%= simple_form_for @car, html: { multipart: true } do |f| %>
 
           <div class="form-group">
@@ -21,12 +21,14 @@
             <%= f.input :picture, as: :file, input_html: { class: 'form-control' } %>
           </div>
 
-          <div class="form-group mb-5">
-            <%= f.button :submit, "Rent your car", class: 'btn btn-outline-light' %>
+          <div class="form-group mb-3 d-grid">
+            <%= f.button :submit, "Rent your car", class: 'btn btn-outline-light opacity-100' %>
           </div>
         <% end %>
 
-        <%= link_to 'Back', cars_path, class: 'btn d-grid btn-outline-light mb-3' %>
+        <div class="center-btn col-3 mx-auto ">
+          <%= link_to 'Back', cars_path, class: 'btn btn-sm btn-outline-light mb-3 opacity-100' %>
+        </div>
       </div>
   </div>
 </div>
