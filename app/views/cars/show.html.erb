@@ -12,7 +12,7 @@
         <h2 class="card-car-pricing"><%= @car.price %> <i class="fa-solid fa-euro-sign"></i>€ /day</h2>
         <br>
         <%= link_to "Book this Car", new_car_booking_path(car_id: @car.id), class: "btn btn-primary" %>
-        <span class="btn-back"><%= link_to 'Back to Cars', cars_path, class: 'btn btn-secondary' %></span>
+        <%= link_to 'Back to Cars', cars_path, class: 'btn btn-secondary ms-3' %>
         <br>
         <br>
           <div id="car-map"
