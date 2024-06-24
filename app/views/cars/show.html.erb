@@ -1,19 +1,26 @@
-<div class="card-container">
-  <div class="row">
-    <div class="card-car-details">
-      <div class="card-car-info text-center">
-        <%= image_tag @car.picture.url, class: "img-fluid rounded center-image" %>
-          <h1><%= @car.name %></h1>
-          <br> <!-- Add a line break here -->
-          <h4><strong><i class="fa-solid fa-map-pin"></i> </strong><%= @car.address %></h4>
-        <br> <!-- Add a line break here -->
-        <h2 class="card-car-pricing"><%= @car.price %> <i class="fa-solid fa-euro-sign"></i> /day</h2>
-        <br> <!-- Add a line break here -->
-        <%= link_to "Book this Car", new_car_booking_path(car_id: @car.id), class: "btn btn-primary" %>
-        <span class="btn-back"><%= link_to 'Back to Cars', cars_path, class: 'btn btn-secondary' %></span>
-        <br> <!-- Add a line break here -->
-        <%# <%= link_to 'All reservations', car_booking_path(@car) %>
+<button data-action="booking#toggle">Book This Car</button>
+
+<div data-controller="booking">
+  <div data-booking-target="form" class="hidden">
+    <%= form_with model: Booking.new, url: bookings_path, local: true do |form| %>
+      <div>
+        <%= form.label :start_date, "Start Date:" %>
+        <%= form.date_field :start_date, required: true %>
       </div>
-    </div>
+
+      <div>
+        <%= form.label :end_date, "End Date:" %>
+        <%= form.date_field :end_date, required: true %>
+      </div>
+
+      <div>
+        <%= form.label :name, "Name:" %>
+        <%= form.text_field :name, required: true %>
+      </div>
+
+      <div>
+        <%= form.submit "Submit Booking" %>
+      </div>
+    <% end %>
   </div>
 </div>

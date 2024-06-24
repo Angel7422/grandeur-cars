@@ -1,4 +1,4 @@
-<%= simple_form_for [@car, @booking] do |f| %>
+<%= simple_form_for [@car, @booking], remote: true do |f| %>
   <div class="form-inputs">
     <%= f.input :start_date, label: "Start date", as: :string, input_html: { data: { controller: "datepicker" } } %>
     <%= f.input :end_date, label: "End date", as: :string, input_html: { data: { controller: "datepicker" } } %>
@@ -8,11 +8,4 @@
   <div class="form-actions">
     <%= f.button :submit, "Create Booking", class: "btn btn-primary" %>
   </div>
-  <% end %>
-<!--dans cette view-->
-<!-- englober les start date et end date dans un seul controller (datepicker)-->
-<!-- data-target = identifie les differents éléments (un sur startdate et un sur end date-->
-
-<!-- modifier le fichier JS pour recuperer ces targets et les mettre chacun dans un flatpickr -->
-<!--consol log pour verifier toutes les étapes -->
-<!-- reduire le input -->
+<% end %>
