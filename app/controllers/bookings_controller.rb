@@ -22,8 +22,8 @@ class BookingsController < ApplicationController
     @booking.car = @car
     @booking.user = current_user
     @booking.status = "pending"
-    # recuperer le start date et end date
-    # calculer le nombre de jours de difference entre les 2
+    # verifier et parser les dates uniquement si elles ne sont pas vides
+    return render :new, status: :unprocessable_entity unless params["booking"]["start_date"].present? && params["booking"]["end_date"].present?
 
     start_date = Date.parse(params["booking"]["start_date"])
     end_date = Date.parse(params["booking"]["end_date"])
