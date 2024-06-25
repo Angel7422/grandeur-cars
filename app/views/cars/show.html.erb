@@ -1,20 +1,26 @@
 <div class="card-container">
   <div class="card-car-details">
     <div class="card-car-info text-center">
-        <%= image_tag @car.picture.url, class: "img-fluid rounded center-image" %>
-          <h1><%= @car.name %></h1>
-          <br>
-          <h4 id="car-address" class="car-address">
-            <strong><i class="far fa-map-marker"></i> </strong><%= @car.address %>
+        <%= image_tag @car.picture.url %>
+        <div class="card-info">
+            <h1><%= @car.name %></h1>
+            <br>
+            <div class="description-car">
+              <p class="p-description-car"> Experience the pinnacle of automotive excellence with the Anibal Icon. This supercar redefines luxury and performance with its sleek aerodynamic design and formidable power. Renowned for its breathtaking speed and precision engineering, the Anibal Icon commands attention on every road and track it conquers.
+                  As specialists in high-end supercar rentals, we offer unparalleled access to the Anibal Icon, available 24/7. Discover a fleet of prestigious vehicles designed to elevate every driving experience, ensuring each moment behind the wheel is nothing short of extraordinary.
+              </p>
+            </div>
+            <h2 class="card-car-pricing"><%= @car.price %> <i class="fa-solid fa-euro-sign"></i>/day</h2>
+            <h4 id="car-address" class="car-address">
+              <strong><i class="fas fa-map-pin"></i> </strong><%= @car.address %>
             </h4>
-        <br>
-        <h2 class="card-car-pricing"><%= @car.price %> <i class="fa-solid fa-euro-sign"></i>/day</h2>
-        <br>
-        <%= link_to "Book this Car", new_car_booking_path(car_id: @car.id), class: "btn btn-primary" %>
-        <%= link_to 'Back to Cars', cars_path, class: 'btn btn-secondary ms-3' %>
-        <br>
-        <br>
+
+            <%#= link_to 'Back to Cars', cars_path, class: 'btn btn-secondary ms-3' %>
+
+        </div>
     </div>
+
+      <div class="car-booking">
         <div id="car-map"
             data-controller="map"
             data-map-api-key-value="<%= ENV['MAPBOX_TOKEN'] %>"
@@ -22,7 +28,7 @@
             style="width: 550px; height: 300px; margin: 0 auto;"
             class="car-map">
         </div>
-        <%= simple_form_for [@car, Booking.new] do |f| %>
+        <%= simple_form_for [@car, Booking.new], html:{class: 'car-booking-form'} do |f| %>
           <div class="form-inputs">
             <%= f.input :start_date, label: "Start date", as: :string, input_html: { data: { controller: "datepicker" } } %>
             <%= f.input :end_date, label: "End date", as: :string, input_html: { data: { controller: "datepicker" } } %>
@@ -33,9 +39,7 @@
             <%= f.button :submit, "Create Booking", class: "btn btn-primary" %>
           </div>
         <% end %>
-
     </div>
-</div>
-<!--<div class="container">
 
-</div>-->
+  </div>
+</div>
