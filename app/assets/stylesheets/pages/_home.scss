@@ -7,9 +7,9 @@
   background-position: center;
   display: flex;
   justify-content: center;
-}
+
   h1 {
-    font-size: 50px;
+    font-size: 100px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-align: center;
   }
@@ -23,7 +23,7 @@
     margin: 0;
     text-align: center;
   }
-
+}
 
 .banner .container h1{
   font-size: 50px;
@@ -83,4 +83,16 @@
 
 .background-page {
   background-color: #1f242d;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 10px;
+  width: 100%;
+}
+.grid-item img {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
 }
