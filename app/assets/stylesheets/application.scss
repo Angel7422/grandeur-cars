@@ -5,13 +5,16 @@
 
 // External libraries
 @import "bootstrap";
-@import "font-awesome";
+@import url("https://use.fontawesome.com/releases/v6.5.2/css/all.css");
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+<<<<<<< HEAD
 @import "components/_new_car_form";
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> 2d45d21de47de669dc3bee1fdb70f34e98110203
 @import url("https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css");
 >>>>>>> 58d8478fd18b547972dcaba66dac6bdec415f078
