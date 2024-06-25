@@ -1,0 +1,38 @@
+<div class="booking-description">
+  <h1>Thanks for booking</h1>
+  <p class="booking-description-title"><%= @booking.car.name %></p>
+  <%= image_tag @booking.car.picture.url, class: "center-image", alt: "" %>
+</div>
+
+<div class="booking-info-card">
+  <div class="card-info">
+    <p class="booking-description-text">Booking informations :</p>
+    <p> <i class="fas fa-map-pin"></i> <%= @booking.car.address %></p>
+    <p><strong>From :</strong> <span class="booking-date"><%= Time.at(@booking.start_date).strftime("%B %d, %Y") %></span></p>
+    <p><strong>To :</strong> <span class="booking-date"><%= Time.at(@booking.end_date).strftime("%B %d, %Y") %></span></p>
+    <p><strong>Status:</strong> <%= @booking.status %></p>
+    <p><strong>Total Price:</strong> <span class="booking-price"><%= number_to_currency(@booking.total_price, unit: "€") %></span></p>
+    <p><strong>Duration:</strong> <%= @booking.duration_in_days %> days</p>
+    <p><strong>Meeting hour : <i>by arrangement</i></p>
+  </div>
+</div>
+
+<div class="actions d-flex justify-content-end mt-3">
+  <%= link_to 'Back', bookings_path, class: 'btn btn-primary' %>
+</div>
+
+<div class="terms mt-5">
+  <h4>Terms and Conditions</h4>
+  <p class="small">By renting this luxury vehicle, you agree to the following terms and conditions:</p>
+  <ul class="terms-list">
+    <li>The vehicle must be returned with the same fuel level as when it was picked up.</li>
+    <li>Any damage to the vehicle will be the responsibility of the renter and must be reported immediately.</li>
+    <li>The vehicle is only to be driven by the person(s) named in the rental agreement.</li>
+    <li>No smoking is allowed in the vehicle.</li>
+    <li>The vehicle must not be used for any illegal activities.</li>
+    <li>The renter is responsible for any traffic violations or fines incurred during the rental period.</li>
+    <li>The vehicle must be returned on the agreed date and time. Late returns may incur additional charges.</li>
+    <li>A security deposit is required and will be refunded upon return of the vehicle in good condition.</li>
+    <li>The rental company reserves the right to terminate the rental agreement at any time if the terms are violated.</li>
+  </ul>
+</div>
