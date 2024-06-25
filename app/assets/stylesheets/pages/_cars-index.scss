@@ -63,3 +63,8 @@
   flex: 0 0 calc(33.33% - 20px); /* Ajustez la largeur de chaque colonne en fonction du nombre de cartes par ligne */
   margin-bottom: 20px; /* Espacement entre les cartes */
 }
+
+.super-cars{
+  display: flex;
+  justify-content: center
+}
