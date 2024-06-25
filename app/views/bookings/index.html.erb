@@ -1,30 +1,28 @@
-<h1 class="text-center text-light mb-1 mt-1">My Bookings</h1>
+<h1 class="text-center text-light mb-5 mt-3">My Bookings</h1>
 
-<div class="container d-flex" style="min-width: 80vw;">
-  <div class="row justify-content-center">
-    <div class="col-md-8">
+<div class="container d-flex table-responsive" style="min-width: 90vw;">
 
-      <table class="table opacity-75">
+      <table class="table table-striped table-secondary table-hover align-middle mt-3">
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Car</th>
-            <th>Start Date</th>
-            <th>End Date</th>
-            <th>Status</th>
-            <th>Actions</th>
+            <th scope="col">ID</th>
+            <th scope="col">Car</th>
+            <th scope="col">Start Date</th>
+            <th scope="col">End Date</th>
+            <th scope="col">Status</th>
+            <th scope="col">Actions</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="table-group-divider">
           <% @bookings.each do |booking| %>
-            <tr>
+            <tr scope="row">
               <td><%= booking.id %></td>
               <td><%= booking.car.name %></td>
               <td><%= booking.start_date %></td>
               <td><%= booking.end_date %></td>
               <td><%= booking.status %></td>
               <td>
-                <%= link_to 'Show', car_path(booking.car), class: 'btn btn-primary btn-sm' %>
+                <%= link_to 'Show', car_path(booking.car), class: 'btn btn-sm' %>
                 <%#= link_to 'Edit', edit_car_booking_path(@car, booking), class: 'btn btn-secondary btn-sm' %>
                 <%#= link_to 'Cancel', car_booking_path(@car, booking), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
               </td>
@@ -34,6 +32,5 @@
       </table>
 
       <%#= link_to 'New Booking', new_car_booking_path(@car), class: 'btn btn-success' %>
-    </div>
-  </div>
+
 </div>
