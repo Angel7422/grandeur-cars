@@ -48,7 +48,6 @@
   border-radius: 50px;
   cursor: pointer;
   text-decoration: none; /* Remove underline for anchor button */
-  opacity: 0.2; /* Initial opacity */
   transition: opacity 0.5s ease-in-out; /* Animation for opacity */
   z-index: 1; /* Ensure the button stays on top */
 }
