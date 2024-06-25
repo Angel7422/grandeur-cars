@@ -2,8 +2,8 @@
   <div class="form-inputs">
     <%= f.input :start_date, label: "Start date", as: :string, input_html: { data: { controller: "datepicker" } } %>
     <%= f.input :end_date, label: "End date", as: :string, input_html: { data: { controller: "datepicker" } } %>
-    <%= f.input :status, label: "Status" %>
   </div>
+  <%= "The reservation for this car is automatic" %>
 
   <div class="form-actions">
     <%= f.button :submit, "Create Booking", class: "btn btn-primary" %>

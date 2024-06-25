@@ -40,9 +40,17 @@ class BookingsController < ApplicationController
     end
   end
 
-  def validate; end
+  def validate
+    # @booking = Booking.find(params[:id])
+    # @booking.update(status: "approved")
+    # redirect_to @booking, notice: "Booking approved!"
+  end
 
-  def reject; end
+  def reject
+    # @booking = Booking.find(params[:id])
+    # @booking.update(status: "rejected")
+    # redirect_to @booking, notice: "Booking rejected."
+  end
 
   private
 

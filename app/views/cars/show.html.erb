@@ -1,7 +1,6 @@
 <div class="card-container">
-  <div class="row">
-    <div class="card-car-details">
-      <div class="card-car-info text-center">
+  <div class="card-car-details">
+    <div class="card-car-info text-center">
         <%= image_tag @car.picture.url, class: "img-fluid rounded center-image" %>
           <h1><%= @car.name %></h1>
           <br>
@@ -9,21 +8,34 @@
             <strong><i class="far fa-map-marker"></i> </strong><%= @car.address %>
             </h4>
         <br>
-        <h2 class="card-car-pricing"><%= @car.price %> <i class="fa-solid fa-euro-sign"></i>€ /day</h2>
+        <h2 class="card-car-pricing"><%= @car.price %> <i class="fa-solid fa-euro-sign"></i>/day</h2>
         <br>
         <%= link_to "Book this Car", new_car_booking_path(car_id: @car.id), class: "btn btn-primary" %>
         <%= link_to 'Back to Cars', cars_path, class: 'btn btn-secondary ms-3' %>
         <br>
         <br>
-          <div id="car-map"
-              data-controller="map"
-              data-map-api-key-value="<%= ENV['MAPBOX_TOKEN'] %>"
-              data-map-markers-value="<%= [{ lat: @car.latitude, lng: @car.longitude }].to_json %>"
-              style="width: 550px; height: 300px; margin: 0 auto;"
-              class="car-map">
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
+        <div id="car-map"
+            data-controller="map"
+            data-map-api-key-value="<%= ENV['MAPBOX_TOKEN'] %>"
+            data-map-markers-value="<%= [{ lat: @car.latitude, lng: @car.longitude }].to_json %>"
+            style="width: 550px; height: 300px; margin: 0 auto;"
+            class="car-map">
+        </div>
+        <%= simple_form_for [@car, Booking.new] do |f| %>
+          <div class="form-inputs">
+            <%= f.input :start_date, label: "Start date", as: :string, input_html: { data: { controller: "datepicker" } } %>
+            <%= f.input :end_date, label: "End date", as: :string, input_html: { data: { controller: "datepicker" } } %>
+          </div>
+          <%= "The reservation for this car is automatic" %>
+
+          <div class="form-actions">
+            <%= f.button :submit, "Create Booking", class: "btn btn-primary" %>
+          </div>
+        <% end %>
+
+    </div>
 </div>
+<!--<div class="container">
+
+</div>-->
