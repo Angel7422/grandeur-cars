@@ -22,9 +22,9 @@
               <td><%= booking.end_date %></td>
               <td><%= booking.status %></td>
               <td>
-                <%= link_to 'Show', car_path(booking.car), class: 'btn btn-sm' %>
-                <%#= link_to 'Edit', edit_car_booking_path(@car, booking), class: 'btn btn-secondary btn-sm' %>
-                <%#= link_to 'Cancel', car_booking_path(@car, booking), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+                <%= link_to 'Show', booking_path(booking), class: 'btn btn-primary btn-sm' %>
+                <%#= link_to 'Edit', edit_booking_path(booking), class: 'btn btn-secondary btn-sm' %>
+                <%#= link_to 'Cancel', booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
               </td>
             </tr>
           <% end %>

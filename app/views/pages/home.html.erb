@@ -1,42 +1,48 @@
 <body class="background-page">
 <div class="banner common-bg" style="background-image: url('https://res.cloudinary.com/dfwstcrkv/image/upload/v1718711706/grandgarage_vid5mb.jpg')">
   <div class="mx-5">
-    <h1> Gran Cars </h1>
-    <p>The Luxury is here for you</p>
-     <div class="buttons">
-        <%#= link_to "Login", cars_path, class: "btn btn-secondary" if !user_signed_in? %>
-        <div class="mb-3">
-        <%= link_to "Browse our cars", cars_path, class: "btn btn-secondary" %>
-        </div>
-        <!--<div>-->
-        <%#= link_to "Rent your car", new_car_path, class: "btn btn-secondary" %>
-        <!--</div>-->
-        <%#= link_to "Bookings", bookings_path(@bookings), class: "btn btn-secondary" if user_signed_in? %>
+    <div class="text-center">
+      <img src="https://res.cloudinary.com/dfwstcrkv/image/upload/v1719307291/Logo_GC_nz4m2q.webp" alt="Gran Cars">
+    </div>
+      <h1> Gran Cars </h1>
+      <p>Elevate your driving experience! Luxury on four wheels!</p>
+      <div class="buttons">
+      <%#= link_to "Login", cars_path, class: "btn btn-secondary" if !user_signed_in? %>
+      <div class="mb-3">
+      <%= link_to "Browse The Cars", cars_path, class: "btn btn-secondary" %>
+      </div>
+      <%# <div>
+      <%= link_to "Rent your car", new_car_path, class: "btn btn-secondary" %>
+      <%# </div> %>
+      <%#= link_to "Bookings", bookings_path(@bookings), class: "btn btn-secondary" if user_signed_in? %>
       </div>
   </div>
 </div>
 
-<div id="car-log" class="px-4 py-5 text-center common-bg">
-  <div class="row g-5">
-    <div class="col">
-        <p class="border border-end-0 border-start-0 border-dark-subtle mt-1 border-3">Elevate your driving experience! Luxury on four wheels!</p>
-    </div>
-  </div>
-</div>
 
-<!--<div id="carousel-gran-car" class="carousel slide common-bg" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="https://res.cloudinary.com/dfwstcrkv/image/upload/v1718373447/porsche_gt4rs_lb7mfn.jpg" class="d-block w-100" alt="Gt-4RS">
-    </div>
-    <div class="carousel-item">
-      <img src="https://res.cloudinary.com/dfwstcrkv/image/upload/v1718373446/pagani_huayra_2_zpoqnv.jpg" class="d-block w-100" alt="huayra">
-    </div>
-    <div class="carousel-item">
-      <img src="https://res.cloudinary.com/dfwstcrkv/image/upload/v1718373446/inibal_icon_dgdigc.jpg" class="d-block w-100" alt="inibal">
-    </div>
+  <div class="grid-container">
+      <div class="grid-item">
+        <img src="https://res.cloudinary.com/dfwstcrkv/image/upload/v1719319753/Lamborghini-Logo.svg_ypxvew.png" alt="Lamborghini">
+      </div>
+      <div class="grid-item">
+        <img src="https://res.cloudinary.com/dfwstcrkv/image/upload/v1719325123/porsche-logo-16_kmagzy.png" alt="Porsche">
+      </div>
+      <div class="grid-item">
+        <img src="https://res.cloudinary.com/dfwstcrkv/image/upload/v1719319918/Logo-Pagani_rbklyq.png" alt="Pagani">
+      </div>
+      <div class="grid-item">
+        <img src="https://res.cloudinary.com/dfwstcrkv/image/upload/v1719325653/pngwing.com_q2piji.png" alt="Koenigsegg">
+      </div>
+      <div class="grid-item">
+        <img src="https://res.cloudinary.com/dfwstcrkv/image/upload/v1719323979/Rolls-Royce-logo_vjzmeo.png" alt="Rolls-Royce">
+      </div>
+      <div class="grid-item">
+        <img src="https://res.cloudinary.com/dfwstcrkv/image/upload/v1719325932/pngegg-2_gn0xdu.png" alt="Maserati">
+      </div>
+      <div class="grid-item">
+        <img src="https://res.cloudinary.com/dfwstcrkv/image/upload/v1719326106/ferrari-2_uuz9j9.png" alt="Ferrari">
+      </div>
   </div>
-</div>-->
 </body>
 
 

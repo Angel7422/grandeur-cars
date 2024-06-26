@@ -7,46 +7,62 @@
   margin: 3em;
 }
 
-.card-car-info {
-  margin-bottom: 75px;
-}
-
 .title-cars {
   font-family: Georgia, 'Times New Roman', Times, serif;
   margin-bottom: 50px;
 }
 
 .card-car-details {
+  display: flex;
   background-color: #1f242d;
   border: 1px solid #e6e6e6;
   border-radius: 4px;
-  padding: 50px;
+  padding: 20px 20px 20px 20px;
   margin-bottom: 20px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+
 
   h1 {
-  font-size: 50px;
-  color: azure;
-  font-weight: 600;
-  margin-bottom: 10px;
+    font-size: 30px;
+    color: azure;
+    font-weight: 600;
+    margin-bottom: 10px;
   }
 
   h4 {
-    font-size: 30px;
+    font-size: 1.5rem;
     color: azure;
     margin-bottom: 10px;
   }
 
   img {
-  width: 100%;
+  width: 50%;
   height: auto;
   margin-bottom: 10px;
+  }
+
+  .car-booking {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    gap: 15%;
+  }
+
+  .car-booking-form{
+    margin-left: 13%;
+    width: 25%;
+    text-align: center;
   }
 
 }
 
 .card-car-details .card-car-pricing {
   color: azure;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
 }
 
 .card-car-details .btn-back {

@@ -1,12 +1,37 @@
 body {
   height: 0px;
 }
+// .description-car {
+//   padding: 20px; /* Espacement intérieur de la boîte */
+//   width: 100%; /* Largeur de la boîte */
+//   margin: 20px auto; /* Centrage horizontal et espacement extérieur */
+//   text-align: center; /* Centrage du texte */
+//   font-size: 16px; /* Taille de la police */
+//   color: #2c3e50;
+
+  .p-description-car {
+    font-size: 16px;
+    color: #d2d1d1;
+    text-shadow: #1f242d 1px 1px 2px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    margin-bottom: 40px;
+    text-align: justify;
+  }
+  .h3-description-car {
+    font-weight: lighter;
+    text-align: left;
+  }
+
 .card-car-info {
   position: relative;
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  margin-bottom: 60px;
 
   .center-image {
     opacity: 0;
@@ -24,5 +49,10 @@ body {
       opacity: 1;
       transform: scale(1);
     }
+  }
+
+  .card-info{
+    margin-left: 30px;
+    align-content: center;
   }
 }
