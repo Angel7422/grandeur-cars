@@ -1,9 +1,12 @@
 class Booking < ApplicationRecord
+  attr_accessor :accept_terms
+
   belongs_to :user
   belongs_to :car
 
   validates :start_date, presence: true
   validates :end_date, presence: true
+  validates :accept_terms, acceptance: { message: 'You must accept the terms and conditions' }
 
   before_create :set_default_status
 

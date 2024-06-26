@@ -28,10 +28,14 @@
             style="width: 550px; height: 300px; margin: 0 auto;"
             class="car-map">
         </div>
-        <%= simple_form_for [@car, Booking.new], html:{class: 'car-booking-form'} do |f| %>
+        <%= simple_form_for [@car, Booking.new], html: { class: 'car-booking-form' } do |f| %>
           <div class="form-inputs">
             <%= f.input :start_date, label: "Start date", as: :string, input_html: { data: { controller: "datepicker" } } %>
             <%= f.input :end_date, label: "End date", as: :string, input_html: { data: { controller: "datepicker" } } %>
+          </div>
+
+          <div>
+            <%= f.input :accept_terms, as: :boolean, label: "J'accepte les termes et conditions", required: true %>
           </div>
           <%= "The reservation for this car is automatic" %>
 
@@ -39,6 +43,7 @@
             <%= f.button :submit, "Create Booking", class: "btn btn-primary btn-new-booking" %>
           </div>
         <% end %>
+
     </div>
 
   </div>
