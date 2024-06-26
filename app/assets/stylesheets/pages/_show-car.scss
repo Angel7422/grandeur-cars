@@ -56,3 +56,14 @@ body {
     align-content: center;
   }
 }
+
+.logo.d-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+}
+.d-flex img {
+  margin-bottom: 20px;
+  max-width: 70px;
+}

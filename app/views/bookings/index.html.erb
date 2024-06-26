@@ -1,10 +1,9 @@
-<h1 class="text-center text-light mb-4 mt-3">My Bookings</h1>
+<h1 class="text-center text-light mb-5 mt-3">My Bookings</h1>
 
-<div class="container" style="min-width: 80vw;">
-  <div class="row">
-    <div class="col d-flex justify-content-center table-responsive">
+<div class="container d-flex table-responsive" style="min-width: 90vw;">
 
-      <table class="table table-secondary table-striped table-hover align-middle opacity-75 mt-3">
+      <table class="table table-striped table-secondary table-hover align-middle mt-3">
+
         <thead>
           <tr>
             <th scope="col">ID</th>
@@ -24,9 +23,9 @@
               <td><%= booking.end_date %></td>
               <td><%= booking.status %></td>
               <td>
-                <%= link_to 'Show', car_path(booking.car), class: 'btn btn-primary btn-sm' %>
-                <%#= link_to 'Edit', edit_car_booking_path(@car, booking), class: 'btn btn-secondary btn-sm' %>
-                <%#= link_to 'Cancel', car_booking_path(@car, booking), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+                <%= link_to 'Show', booking_path(booking), class: 'btn btn-primary btn-sm' %>
+                <%#= link_to 'Edit', edit_booking_path(booking), class: 'btn btn-secondary btn-sm' %>
+                <%#= link_to 'Cancel', booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
               </td>
             </tr>
           <% end %>
@@ -34,6 +33,8 @@
       </table>
 
       <%#= link_to 'New Booking', new_car_booking_path(@car), class: 'btn btn-success' %>
-    </div>
-  </div>
+
 </div>
+<!--<div class="logo d-flex logo-booking">
+  <img src="https://res.cloudinary.com/dfwstcrkv/image/upload/v1719307291/Logo_GC_nz4m2q.webp" alt="Gran Cars">
+</div>-->

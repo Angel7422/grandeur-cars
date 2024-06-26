@@ -6,11 +6,11 @@
             <h1><%= @car.name %></h1>
             <br>
             <div class="description-car">
-              <p class="p-description-car"> Experience the pinnacle of automotive excellence with the Anibal Icon. This supercar redefines luxury and performance with its sleek aerodynamic design and formidable power. Renowned for its breathtaking speed and precision engineering, the Anibal Icon commands attention on every road and track it conquers.
-                  As specialists in high-end supercar rentals, we offer unparalleled access to the Anibal Icon, available 24/7. Discover a fleet of prestigious vehicles designed to elevate every driving experience, ensuring each moment behind the wheel is nothing short of extraordinary.
+              <p class="p-description-car"> The Porsche 718 Cayman GT4 RS is a high-performance sports car that represents the pinnacle of the 718 lineup. This model features a 4.0-liter naturally aspirated flat-six engine derived from the 911 GT3, producing 493 horsepower and 331 lb-ft of torque. It boasts a lightweight construction with extensive use of carbon fiber and other weight-saving materials, resulting in a curb weight of around 3,200 pounds. The GT4 RS is equipped with a 7-speed PDK dual-clutch transmission, providing rapid gear shifts and an engaging driving experience. Its aerodynamic enhancements, including a large rear wing and functional vents, ensure superior downforce and stability at high speeds. With a 0-60 mph time of just 3.2 seconds and a top speed of 196 mph, the Porsche 718 Cayman GT4 RS offers exhilarating performance, precision handling, and an immersive driving experience.
               </p>
             </div>
             <h2 class="card-car-pricing"><%= @car.price %> <i class="fa-solid fa-euro-sign"></i>/day</h2>
+            <br>
             <h4 id="car-address" class="car-address">
               <strong><i class="fas fa-map-pin"></i> </strong><%= @car.address %>
             </h4>
@@ -28,18 +28,26 @@
             style="width: 550px; height: 300px; margin: 0 auto;"
             class="car-map">
         </div>
-        <%= simple_form_for [@car, Booking.new], html:{class: 'car-booking-form'} do |f| %>
+        <%= simple_form_for [@car, Booking.new], html: { class: 'car-booking-form' } do |f| %>
           <div class="form-inputs">
             <%= f.input :start_date, label: "Start date", as: :string, input_html: { data: { controller: "datepicker" } } %>
             <%= f.input :end_date, label: "End date", as: :string, input_html: { data: { controller: "datepicker" } } %>
           </div>
+
+          <div>
+            <%= f.input :accept_terms, as: :boolean, label: "J'accepte les termes et conditions", required: true %>
+          </div>
           <%= "The reservation for this car is automatic" %>
 
           <div class="form-actions">
-            <%= f.button :submit, "Create Booking", class: "btn btn-primary" %>
+            <%= f.button :submit, "Create Booking", class: "btn btn-primary btn-new-booking" %>
           </div>
         <% end %>
+
     </div>
 
   </div>
 </div>
+<!--<div class="logo d-flex">
+  <img src="https://res.cloudinary.com/dfwstcrkv/image/upload/v1719307291/Logo_GC_nz4m2q.webp" alt="Gran Cars">
+</div>-->
