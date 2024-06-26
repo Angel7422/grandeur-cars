@@ -11,13 +11,13 @@
     <p><strong>From :</strong> <span class="booking-date"><%= Time.at(@booking.start_date).strftime("%B %d, %Y") %></span></p>
     <p><strong>To :</strong> <span class="booking-date"><%= Time.at(@booking.end_date).strftime("%B %d, %Y") %></span></p>
     <p><strong>Status:</strong> <%= @booking.status %></p>
-    <p><strong>Total Price:</strong> <span class="booking-price"><%= number_to_currency(@booking.total_price, unit: "€") %></span></p>
+    <p><strong>Total Price:</strong> <span class="booking-price"><%= number_to_currency(@booking.total_price, unit: "€ ") %></span></p>
     <p><strong>Duration:</strong> <%= @booking.duration_in_days %> days</p>
-    <p><strong>Meeting hour : <i>by arrangement</i></p>
+    <p><strong>Meeting : <i>Arrange by phone / +33 1 43 34 23</i></p>
   </div>
 </div>
 
-<div class="actions d-flex justify-content-end mt-3">
+<div class="actions mt-3">
   <%= link_to 'Back', bookings_path, class: 'btn btn-primary' %>
 </div>
 
